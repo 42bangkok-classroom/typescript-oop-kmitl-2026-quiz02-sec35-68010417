@@ -18,8 +18,8 @@ export async function safeFetchComment (commentId:number):Promise<Comment | null
     const get = await axios.get<Posts>(`https://jsonplaceholder.typicode.com/comments/{id}`);
     const Posts = get.data;
 
-    return {id: Posts.id,body: Posts.body};
-
+    const result = {id: Posts.id,body: Posts.body};
+    return result;
   }catch(error){
     return null;
   }
