@@ -12,6 +12,7 @@ interface Comment{
 
 export async function safeFetchComment (commentId:number):Promise<Comment | null>{
   try{
+    if(isNaN(commentId) || commentId<=0)
     const get = await axios.get<Posts>(`https://jsonplaceholder.typicode.com/comments/{id}`);
     const Posts = get.data;
 
