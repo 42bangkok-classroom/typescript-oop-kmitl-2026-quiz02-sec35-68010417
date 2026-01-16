@@ -15,7 +15,7 @@ export async function safeFetchComment (commentId:number):Promise<Comment | null
     if(isNaN(commentId) || commentId<=0 || commentId === null){
       return null;
     }
-    const get = await axios.get<Posts>(`https://jsonplaceholder.typicode.com/comments/{id}`);
+    const get = await axios.get<Posts>(`https://jsonplaceholder.typicode.com/comments/${commentId}`);
     const Posts = get.data;
 
     const result = {id: Posts.id,body: Posts.body};
