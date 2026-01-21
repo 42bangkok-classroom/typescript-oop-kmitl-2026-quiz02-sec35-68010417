@@ -22,8 +22,9 @@ try{
     {id: firstpost.id,title: firstpost.title},
     {id: lastpost.id,title: lastpost.title}
   ]
+  console.log("test");
 
 }catch(error){
-  throw new Error("error");
+  throw new Error("Error");
 }
 }
